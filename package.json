@@ -5,9 +5,15 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "antd": "latest",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-scripts": "3.0.1"
+    "react-redux": "latest",
+    "react-router": "latest",
+    "react-router-dom": "latest",
+    "react-scripts": "3.0.1",
+    "redux": "latest",
+    "redux-thunk": "latest"
   },
   "devDependencies": {
     "typescript": "3.3.3"

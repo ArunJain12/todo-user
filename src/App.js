@@ -1,11 +1,29 @@
 import React from "react";
-import "./styles.css";
+import "antd/dist/antd.css";
+import Layout from "./hoc/Layout/AppLayout";
+import { Route } from "react-router-dom";
+import { connect } from "react-redux";
+import Todos from "./containers/Todos";
+import Users from "./containers/Users";
 
-export default function App() {
+function App(props) {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+    <div>
+      <Layout>
+        {props.link === "todos" ? (
+          <Route path="/" exact component={Todos} />
+        ) : (
+          <Route path="/" exact component={Users} />
+        )}
+      </Layout>
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    link: state.link
+  };
+};
+
+export default connect(mapStateToProps)(App);
